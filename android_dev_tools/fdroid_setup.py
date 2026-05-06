@@ -61,8 +61,8 @@ def main(
     fdroid_data_path = base_dir / "fdroid-data"
     app_id = yaml_file.stem  # basename without .yml
 
-    if Path(".env").exists():
-        load_dotenv()
+    dotenv_path = Path(".env")
+    load_dotenv(dotenv_path)
 
     # Fallback gitlab_user to environment or fail
     if not gitlab_user:
