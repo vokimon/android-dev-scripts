@@ -434,9 +434,10 @@ class Config():
     liberapay_id: str = ""
     bitcoin_id: str = ""
     version_tag_prefix: str = 'v'
+    generate_flatpak: bool = False
+    generate_godot: bool = False
 
-
-    # TODO: Rename to explicitly 
+    # TODO: Rename to explicitly
     @property
     def project_license(self):
         return spdx2assetlib_license.get(self.license) or spdx2assetlib_license['']
@@ -990,8 +991,11 @@ def generateMetadata():
     update_promo_images()
     update_github_issue_templates()
     generate_fastlane()
-    #update_flatpak_metainfo()
-    #update_flatpak_desktop_file()
+    if config.generate_flatpak:
+        update_flatpak_metainfo()
+        update_flatpak_desktop_file()
+    if config.generate_godot:
+        adapt_android_preset()
 
 app = typer.Typer(help=__doc__)
 
