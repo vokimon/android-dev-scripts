@@ -1,9 +1,9 @@
-# CLI
+# `app-icon-generator.py`
 
 **Usage**:
 
 ```console
-$ [OPTIONS] COMMAND [ARGS]...
+$ app-icon-generator.py [OPTIONS] COMMAND [ARGS]...
 ```
 
 **Options**:
@@ -18,14 +18,14 @@ $ [OPTIONS] COMMAND [ARGS]...
 * `launcher-icon`: Generates adaptative icons for Android...
 * `splash`: Generate a simple featureGraphic.svg for...
 
-## `app-icon`
+## `app-icon-generator.py app-icon`
 
 Generates svg app icon from material icon
 
 **Usage**:
 
 ```console
-$ app-icon [OPTIONS] SVG_PATH
+$ app-icon-generator.py app-icon [OPTIONS] SVG_PATH
 ```
 
 **Arguments**:
@@ -40,14 +40,14 @@ $ app-icon [OPTIONS] SVG_PATH
 * `-s,--size INTEGER`: Size in pixels  [default: 512]
 * `--help`: Show this message and exit.
 
-## `launcher-icon`
+## `app-icon-generator.py launcher-icon`
 
 Generates adaptative icons for Android from a material icon svg.
 
 **Usage**:
 
 ```console
-$ launcher-icon [OPTIONS] SVG_PATH
+$ app-icon-generator.py launcher-icon [OPTIONS] SVG_PATH
 ```
 
 **Arguments**:
@@ -64,14 +64,14 @@ $ launcher-icon [OPTIONS] SVG_PATH
 * `--minsdk INTEGER`: minSdkVersion de la app  [default: 24]
 * `--help`: Show this message and exit.
 
-## `splash`
+## `app-icon-generator.py splash`
 
 Generate a simple featureGraphic.svg for Google Play / F-Droid (1024x500)
 
 **Usage**:
 
 ```console
-$ splash [OPTIONS] APP_NAME SVG_PATH
+$ app-icon-generator.py splash [OPTIONS] APP_NAME SVG_PATH
 ```
 
 **Arguments**:
@@ -86,4 +86,3 @@ $ splash [OPTIONS] APP_NAME SVG_PATH
 * `--motto TEXT`: Motto under the name  [default: Fill up cheaper, closer]
 * `--out PATH`: Output svg  [default: featureGraphic.svg]
 * `--help`: Show this message and exit.
-

@@ -1,11 +1,11 @@
-# `main`
+# `create-android-project.py`
 
 Create a minimal Android Kotlin project structure from CLI.
 
 **Usage**:
 
 ```console
-$ main [OPTIONS] [PACKAGE_NAME] [PROJECT_NAME]
+$ create-android-project.py [OPTIONS] [PACKAGE_NAME] [PROJECT_NAME]
 ```
 
 **Arguments**:
@@ -29,4 +29,3 @@ $ main [OPTIONS] [PACKAGE_NAME] [PROJECT_NAME]
 * `--icon-bg TEXT`: Launcher icon background color
 * `--icon-fg TEXT`: Launcher icon foreground color
 * `--help`: Show this message and exit.
-

@@ -1,11 +1,11 @@
-# `mastodon stuter`
+# `mastodon_tuter.py`
 
 CLI mastodon interaction
 
 **Usage**:
 
 ```console
-$ mastodon stuter [OPTIONS] COMMAND [ARGS]...
+$ mastodon_tuter.py [OPTIONS] COMMAND [ARGS]...
 ```
 
 **Options**:
@@ -19,14 +19,14 @@ $ mastodon stuter [OPTIONS] COMMAND [ARGS]...
 * `post`: Post a markdown thread to Mastodon with...
 * `boost`: Boost and favorite a Mastodon post by URL...
 
-## `mastodon stuter post`
+## `mastodon_tuter.py post`
 
 Post a markdown thread to Mastodon with media, boosters, and metadata.
 
 **Usage**:
 
 ```console
-$ mastodon stuter post [OPTIONS] FILE POSTER
+$ mastodon_tuter.py post [OPTIONS] FILE POSTER
 ```
 
 **Arguments**:
@@ -43,14 +43,14 @@ $ mastodon stuter post [OPTIONS] FILE POSTER
 * `--boosters TEXT`: Optional list of boosters to override YAML
 * `--help`: Show this message and exit.
 
-## `mastodon stuter boost`
+## `mastodon_tuter.py boost`
 
 Boost and favorite a Mastodon post by URL using one or more accounts
 
 **Usage**:
 
 ```console
-$ mastodon stuter boost [OPTIONS] POST_URL BOOSTERS...
+$ mastodon_tuter.py boost [OPTIONS] POST_URL BOOSTERS...
 ```
 
 **Arguments**:
@@ -61,4 +61,3 @@ $ mastodon stuter boost [OPTIONS] POST_URL BOOSTERS...
 **Options**:
 
 * `--help`: Show this message and exit.
-

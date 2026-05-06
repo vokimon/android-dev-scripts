@@ -1,4 +1,4 @@
-# CLI
+# `yaml-translations.py`
 
 Management tools for YAML translation files.
 
@@ -16,7 +16,7 @@ It contains structures ID-&gt;lang-&gt;text.
 **Usage**:
 
 ```console
-$ [OPTIONS] COMMAND [ARGS]...
+$ yaml-translations.py [OPTIONS] COMMAND [ARGS]...
 ```
 
 **Options**:
@@ -39,7 +39,7 @@ $ [OPTIONS] COMMAND [ARGS]...
 * `flowify`: Convert strings in YAML to flow style,...
 * `find`: Find usages of translation IDs in source...
 
-## `extract`
+## `yaml-translations.py extract`
 
 Extract translations from per-language YAMLs into a multilingual YAML.
 
@@ -48,7 +48,7 @@ Output format: id -&gt; lang -&gt; text (flattened keys).
 **Usage**:
 
 ```console
-$ extract [OPTIONS] INPUT_DIR [IDS]... OUTPUT_YAML
+$ yaml-translations.py extract [OPTIONS] INPUT_DIR [IDS]... OUTPUT_YAML
 ```
 
 **Arguments**:
@@ -61,7 +61,7 @@ $ extract [OPTIONS] INPUT_DIR [IDS]... OUTPUT_YAML
 
 * `--help`: Show this message and exit.
 
-## `distribute`
+## `yaml-translations.py distribute`
 
 Distribute translations from a multilingual YAML into per-language files.
 
@@ -70,7 +70,7 @@ Input format: id -&gt; lang -&gt; text (flattened keys).
 **Usage**:
 
 ```console
-$ distribute [OPTIONS] INPUT_YAML OUTPUT_DIR
+$ yaml-translations.py distribute [OPTIONS] INPUT_YAML OUTPUT_DIR
 ```
 
 **Arguments**:
@@ -82,7 +82,7 @@ $ distribute [OPTIONS] INPUT_YAML OUTPUT_DIR
 
 * `--help`: Show this message and exit.
 
-## `sync`
+## `yaml-translations.py sync`
 
 Align translation files with the reference language.
 
@@ -99,7 +99,7 @@ Each file uses the reference language from its own directory.
 **Usage**:
 
 ```console
-$ sync [OPTIONS] YAMLS...
+$ yaml-translations.py sync [OPTIONS] YAMLS...
 ```
 
 **Arguments**:
@@ -113,14 +113,14 @@ $ sync [OPTIONS] YAMLS...
 * `--remove-extra`: Remove ids not in the reference language
 * `--help`: Show this message and exit.
 
-## `rename`
+## `yaml-translations.py rename`
 
 Renames a text id in all the translation files
 
 **Usage**:
 
 ```console
-$ rename [OPTIONS] PATH OLD_ID NEW_ID
+$ yaml-translations.py rename [OPTIONS] PATH OLD_ID NEW_ID
 ```
 
 **Arguments**:
@@ -133,14 +133,14 @@ $ rename [OPTIONS] PATH OLD_ID NEW_ID
 
 * `--help`: Show this message and exit.
 
-## `move`
+## `yaml-translations.py move`
 
 Move translation keys or namespaces from source to destination module.
 
 **Usage**:
 
 ```console
-$ move [OPTIONS] SRC_DIR DST_DIR IDS...
+$ yaml-translations.py move [OPTIONS] SRC_DIR DST_DIR IDS...
 ```
 
 **Arguments**:
@@ -153,7 +153,7 @@ $ move [OPTIONS] SRC_DIR DST_DIR IDS...
 
 * `--help`: Show this message and exit.
 
-## `andaluh`
+## `yaml-translations.py andaluh`
 
 Generate Andalûh (&#x27;and&#x27;) translations from Spanish (&#x27;es&#x27;) file.
 
@@ -163,7 +163,7 @@ Papuan Anzu language until Andalûh gets its own.
 **Usage**:
 
 ```console
-$ andaluh [OPTIONS] PATH
+$ yaml-translations.py andaluh [OPTIONS] PATH
 ```
 
 **Arguments**:
@@ -175,14 +175,14 @@ $ andaluh [OPTIONS] PATH
 * `--overwrite`: Overwrite existing translations in destination language
 * `--help`: Show this message and exit.
 
-## `to-json`
+## `yaml-translations.py to-json`
 
 Convert YAML translation files to JSON.
 
 **Usage**:
 
 ```console
-$ to-json [OPTIONS] PATHS...
+$ yaml-translations.py to-json [OPTIONS] PATHS...
 ```
 
 **Arguments**:
@@ -193,14 +193,14 @@ $ to-json [OPTIONS] PATHS...
 
 * `--help`: Show this message and exit.
 
-## `from-json`
+## `yaml-translations.py from-json`
 
 Convert JSON translation files to YAML.
 
 **Usage**:
 
 ```console
-$ from-json [OPTIONS] PATHS...
+$ yaml-translations.py from-json [OPTIONS] PATHS...
 ```
 
 **Arguments**:
@@ -211,14 +211,14 @@ $ from-json [OPTIONS] PATHS...
 
 * `--help`: Show this message and exit.
 
-## `blockify`
+## `yaml-translations.py blockify`
 
 Format multiline values as block style. Single line are kept unless forced.
 
 **Usage**:
 
 ```console
-$ blockify [OPTIONS] PATH [IDS]...
+$ yaml-translations.py blockify [OPTIONS] PATH [IDS]...
 ```
 
 **Arguments**:
@@ -231,14 +231,14 @@ $ blockify [OPTIONS] PATH [IDS]...
 * `--force`: Convert also single-line strings
 * `--help`: Show this message and exit.
 
-## `flowify`
+## `yaml-translations.py flowify`
 
 Convert strings in YAML to flow style, Multiline are kept unless forced.
 
 **Usage**:
 
 ```console
-$ flowify [OPTIONS] PATH [IDS]...
+$ yaml-translations.py flowify [OPTIONS] PATH [IDS]...
 ```
 
 **Arguments**:
@@ -251,14 +251,14 @@ $ flowify [OPTIONS] PATH [IDS]...
 * `--force`: Convert also multi-line
 * `--help`: Show this message and exit.
 
-## `find`
+## `yaml-translations.py find`
 
 Find usages of translation IDs in source files.
 
 **Usage**:
 
 ```console
-$ find [OPTIONS] PATH [IDS]...
+$ yaml-translations.py find [OPTIONS] PATH [IDS]...
 ```
 
 **Arguments**:
@@ -273,4 +273,3 @@ $ find [OPTIONS] PATH [IDS]...
 * `-s TEXT`: File suffixes to include
 * `--only-missing`: Show only IDs with no occurrences
 * `--help`: Show this message and exit.
-
