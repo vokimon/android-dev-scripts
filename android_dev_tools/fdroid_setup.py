@@ -61,11 +61,10 @@ def main(
     fdroid_data_path = base_dir / "fdroid-data"
     app_id = yaml_file.stem  # basename without .yml
 
-    # Load .env if exists (may contain other needed variables)
     if Path(".env").exists():
         load_dotenv()
 
-    # Resolve GITLAB_USER: parameter overrides .env
+    # Fallback gitlab_user to environment or fail
     if not gitlab_user:
         gitlab_user = os.environ.get("GITLAB_USER", "")
 
