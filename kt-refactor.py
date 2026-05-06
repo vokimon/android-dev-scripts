@@ -282,7 +282,7 @@ def handle_symbol_mode(source: str, target: str) -> None:
         success("No remaining references found!")
 
 
-@app.command("move")
+@app.command()
 def move(
     source: str = typer.Argument(..., help="Source file path or old fully-qualified name"),
     target: str = typer.Argument(..., help="Target directory/file path or new fully-qualified name"),
@@ -311,6 +311,10 @@ def move(
 
     typer.echo("")
     typer.echo("💡 Done! Review changes with: git diff")
+
+@app.command()
+def noop():
+    """Dummy command to force move to be a subcommand"""
 
 
 if __name__ == "__main__":
