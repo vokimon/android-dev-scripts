@@ -22,6 +22,7 @@ local.properties
 # Python scripts
 
 __pycache__
+*.egg-info
 meta/fdroid-data
 meta/fdroid-server
 tools/graphhopper-data
