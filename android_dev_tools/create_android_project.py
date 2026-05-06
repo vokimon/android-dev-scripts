@@ -815,19 +815,12 @@ def generate_launcher_icon(
     bg_color: str,
     fg_color: str,
     minsdk: int,
-) -> None:
-    """Generate adaptive launcher icons by calling app-icon-generator.py."""
-    script_dir = Path(__file__).parent
-    icon_generator = script_dir / "app-icon-generator.py"
-
-    if not icon_generator.exists():
-        fail(f"app-icon-generator.py not found at {icon_generator}")
-
+    ) -> None:
+    """Generate adaptive launcher icons by calling app-icon-generator CLI."""
     step(f"Generating adaptive icons from {svg_path}...")
 
     run(
-        sys.executable,
-        str(icon_generator),
+        "app-icon-generator",
         "launcher-icon",
         str(svg_path),
         "--bg", bg_color,

@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68.0", "setuptools-scm>=8.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "android-dev-tools"
+version = "0.1.0"
+description = "Scripts to speed up common tasks in Android projects"
+readme = "README.md"
+license = {text = "AGPL-3.0-or-later"}
+authors = [
+    {name = "David García Garzón", email = "voki@canvoki.net"},
+]
+dependencies = [
+    "godot_asset_library_client",
+    "consolemsg",
+    "yamlns",
+    "asn1crypto",
+    "requests",
+    "rich",
+    "typer",
+    "lxml",
+    "pillow",
+    "cairosvg",
+    "python-dotenv",
+]
+requires-python = ">=3.8"
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff"]
+
+[project.scripts]
+create-android-project = "android_dev_tools.create_android_project:main"
+app-icon-generator = "android_dev_tools.app_icon_generator:main"
+material-icons-android-importer = "android_dev_tools.material_icons_android_importer:main"
+generate-metadata = "android_dev_tools.generate_metadata:app"
+generate-web = "android_dev_tools.generate_web:main"
+kt-refactor = "android_dev_tools.kt_refactor:main"
+mastodon-tuter = "android_dev_tools.mastodon_tuter:main"
+yaml-translations = "android_dev_tools.yaml_translations:main"
+fdroid-setup = "android_dev_tools.fdroid_setup:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["android_dev_tools*"]
+
+[tool.setuptools.package-data]
+"android_dev_tools" = ["fdroid-setup.sh"]
