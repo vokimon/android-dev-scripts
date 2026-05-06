@@ -1,7 +1,47 @@
 #!/usr/bin/env python
 
-# generates metadata for packaging and distributing in different
-# platforms from README.md, CHANGES.md and screenshots
+"""\
+Generates metadata for packaging and distributing in different platforms
+using standard files as single source of truth.
+
+Required project files:\n
+
+- meta/overrides.yaml: Main configuration and overrides (project name, URLs, categories, motto...)\n
+- README.md: Source for project name (first header) and description (remaining or until <!-- end-of-description -->)\n
+- CHANGES.md: Takes takes the current version and the release notes\n
+- LICENSE: License file (auto-detected via SPDX)\n
+- .git/ for repository info
+- meta/translations/*.yaml translated metadata (but en.yaml)\n
+- app/src/main/AndroidManifest.xml OR app/build.gradle(.kts): For package name\n
+- .env: Signing credentials (for F-Droid fingerprint)\n
+- icon.png application icon\n
+- media/*png screenshots (by default extract names as their description)\n
+- media/*md screenshot captions matching screenshot names (if missing use png file names)\n
+- media/promo/*.svg promotional images with place holders for metadata text (banner, splash)\n
+\n
+General outputs:\n
+\n
+- version.properties with proper version\n
+- meta/translations/en.yaml with updated metadata to translate\n
+- .github/ISSUE_TEMPLATE/bug_report.yml with updated version list\n
+- media/promo/*.svg text updated with metadata by ids (name, description, motto, version...)\n
+- media/promo/*.png from SVG templates\n
+\n
+F-Droid outputs:\n
+\n
+- Full fastlane structure (descriptions, changelogs, screenshots, icons, featured images)\n
+- meta/<app_id>.yml for F-Droid compilation\n
+\n
+Flatpak outputs:\n
+\n
+- tools/flatpak/<app_id>.metainfo.xml\n
+- tools/flatpak/<app_id>.desktop\n
+\n
+Godot outputs:\n
+\n
+- export_presets.cfg\n
+\n
+"""
 
 import os
 import operator
@@ -14,6 +54,7 @@ from dataclasses import dataclass, field, asdict
 from consolemsg import fail, warn
 import yaml
 from yamlns import ns
+import typer
 
 spdx2assetlib_license = {
     'MIT': 'MIT',
@@ -490,7 +531,7 @@ class Config():
 
 
 yaml_metadata = 'meta/overrides.yaml'
-config = Config.from_file(yaml_metadata)
+config = None  # Lazy initialized in main()
 
 emoji_pattern = re.compile(
     "["
@@ -952,9 +993,16 @@ def generateMetadata():
     #update_flatpak_metainfo()
     #update_flatpak_desktop_file()
 
+app = typer.Typer(help=__doc__)
+
+@app.command(help=__doc__)
+def main():
+    global config
+    config = Config.from_file(yaml_metadata)
+    generateMetadata()
 
 if __name__ == '__main__':
-    generateMetadata()
+    app()
     #print(yaml.dump(asdict(config)))
 
 

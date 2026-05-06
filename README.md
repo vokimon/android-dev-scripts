@@ -6,7 +6,7 @@ Scripts to speed up some common tasks in Android projects.
 - [`app-icon-generator.py`](docs/app-icon-generator.md) Generates the many drawable versions of an Android application icon
 - [`material-icons-android-importer.py`](material-icons-android-importer.md) Quick import material icons as Android resources
 - `fdroid-setup.sh` Setups an fdroid sandbox to build packages
-- [`kt-refactor`](docs/kt-refactor.md) Automated kotlin refactor operations
+- [`kt-refactor.py`](docs/kt-refactor.md) Automated kotlin refactor operations
 - [`yaml-translations.py`](docs/yaml-translations.md) Operations related to yaml based translations (see [android-yaml-strings](https://github.com/vokimon/android-yaml-strings))
 - [`generate-metadata.py`](docs/generate-metadata.md) Propagates metadata from centralized information sources such as README, CHANGES.md...
 - [`generate-web.py`](docs/generate-web.md) Generates a simple but modern translated single page website for the application.
