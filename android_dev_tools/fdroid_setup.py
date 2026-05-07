@@ -52,8 +52,8 @@ def try_run(*args, **kwargs):
 
 @app.command()
 def main(
-    yaml_file: Path = typer.Argument(..., exists=True, resolve_path=True, help="Path to app.yml metadata file"),
-    gitlab_user: str = typer.Argument(None, help="GitLab username (overrides .env)"),
+    yaml_file: Path = typer.Argument(exists=True, resolve_path=True, show_default=False, help="Path to com.example.myapp.yml metadata file"),
+    gitlab_user: str = typer.Option(None, envvar="GITLAB_USER", show_default=False, help="GitLab username"),
 ):
     """Sets up or starts a local F-Droid build environment."""
     base_dir = yaml_file.parent
