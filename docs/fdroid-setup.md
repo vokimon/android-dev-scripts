@@ -15,6 +15,7 @@ $ fdroid-setup [OPTIONS] YAML_FILE
 **Options**:
 
 * `--gitlab-user TEXT`: GitLab username for your fdroid-data fork  [env var: GITLAB_USER]
+* `-b, --branch TEXT`: Branch name for fdroiddata (defaults to app ID from YAML filename)  [env var: FDROIDDATA_BRANCH]
 * `--install-completion`: Install completion for the current shell.
 * `--show-completion`: Show completion for the current shell, to copy it or customize the installation.
 * `--help`: Show this message and exit.
