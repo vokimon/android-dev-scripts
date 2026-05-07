@@ -54,6 +54,7 @@ def try_run(*args, **kwargs):
 def main(
     yaml_file: Path = typer.Argument(exists=True, resolve_path=True, show_default=False, help="F-Droid metadata file (ie. com.example.myapp.yml)"),
     gitlab_user: str = typer.Option(None, envvar="GITLAB_USER", show_default=False, help="GitLab username for your fdroid-data fork"),
+    branch: str = typer.Option(None, "-b", "--branch", envvar="FDROIDDATA_BRANCH", show_default=False, help="Branch name for fdroiddata (defaults to app ID from YAML filename)"),
 ):
     """Sets up or starts a local F-Droid build environment."""
     base_dir = yaml_file.parent
@@ -67,6 +68,12 @@ def main(
     # Fallback gitlab_user to environment or fail
     if not gitlab_user:
         gitlab_user = os.environ.get("GITLAB_USER", "")
+
+    # Fallback branch to environment variable or app_id
+    if branch is None:
+        branch = os.environ.get("FDROIDDATA_BRANCH")
+    if branch is None:
+        branch = app_id
 
     if not gitlab_user:
         fail(
@@ -89,9 +96,9 @@ def main(
     if not fdroid_data_path.exists():
         run("git", "clone", "--depth=100", f"git@gitlab.com:{gitlab_user}/fdroiddata.git", str(fdroid_data_path))
         os.chdir(fdroid_data_path)
-        run("git", "remote", "set-branches", "origin", app_id)
-        if not try_run("git", "fetch", "origin", app_id) or not try_run("git", "checkout", app_id):
-            run("git", "checkout", "-b", app_id)
+        run("git", "remote", "set-branches", "origin", branch)
+        if not try_run("git", "fetch", "origin", branch) or not try_run("git", "checkout", branch):
+            run("git", "checkout", "-b", branch)
         os.chdir(base_dir)
 
     # Remove old files
