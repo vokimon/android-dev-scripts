@@ -1,11 +1,11 @@
-# `kt-refactor.py`
+# `kt-refactor`
 
 A general Kotlin refactoring tool.
 
 **Usage**:
 
 ```console
-$ kt-refactor.py [OPTIONS] COMMAND [ARGS]...
+$ kt-refactor [OPTIONS] COMMAND [ARGS]...
 ```
 
 **Options**:
@@ -19,7 +19,7 @@ $ kt-refactor.py [OPTIONS] COMMAND [ARGS]...
 * `move`: Moves kotlin artifacts between packages or...
 * `noop`: Dummy command to force move to be a...
 
-## `kt-refactor.py move`
+## `kt-refactor move`
 
 Moves kotlin artifacts between packages or modules adapting imports.
 
@@ -46,7 +46,7 @@ Examples:
 **Usage**:
 
 ```console
-$ kt-refactor.py move [OPTIONS] SOURCE TARGET [SYMBOLS]...
+$ kt-refactor move [OPTIONS] SOURCE TARGET [SYMBOLS]...
 ```
 
 **Arguments**:
@@ -59,14 +59,14 @@ $ kt-refactor.py move [OPTIONS] SOURCE TARGET [SYMBOLS]...
 
 * `--help`: Show this message and exit.
 
-## `kt-refactor.py noop`
+## `kt-refactor noop`
 
 Dummy command to force move to be a subcommand
 
 **Usage**:
 
 ```console
-$ kt-refactor.py noop [OPTIONS]
+$ kt-refactor noop [OPTIONS]
 ```
 
 **Options**:

@@ -1,9 +1,9 @@
-# `material-icons-android-importer.py`
+# `material-icons-android-importer`
 
 **Usage**:
 
 ```console
-$ material-icons-android-importer.py [OPTIONS] COMMAND [ARGS]...
+$ material-icons-android-importer [OPTIONS] COMMAND [ARGS]...
 ```
 
 **Options**:
@@ -19,7 +19,7 @@ $ material-icons-android-importer.py [OPTIONS] COMMAND [ARGS]...
 * `download-icon`: Download a material icon as svg.
 * `list`: Lists all Material Icon ids
 
-## `material-icons-android-importer.py fetch-icon`
+## `material-icons-android-importer fetch-icon`
 
 Fecth a material icon,
 converts to Vector Drawable (Android&#x27;s format),
@@ -29,7 +29,7 @@ so that they are available as &quot;@drawable/ic_{name}&quot;
 **Usage**:
 
 ```console
-$ material-icons-android-importer.py fetch-icon [OPTIONS] ICON_NAME [VARIANT]
+$ material-icons-android-importer fetch-icon [OPTIONS] ICON_NAME [VARIANT]
 ```
 
 **Arguments**:
@@ -43,7 +43,7 @@ $ material-icons-android-importer.py fetch-icon [OPTIONS] ICON_NAME [VARIANT]
 * `--project-root DIRECTORY`: Android project root directory  [default: .]
 * `--help`: Show this message and exit.
 
-## `material-icons-android-importer.py import-icon`
+## `material-icons-android-importer import-icon`
 
 Convert an svg icon to Vector Drawable (Android&#x27;s format),
 and place it into the proper path in the project,
@@ -52,7 +52,7 @@ so that they are available as &quot;@drawable/ic_{name}&quot;
 **Usage**:
 
 ```console
-$ material-icons-android-importer.py import-icon [OPTIONS] ICON_PATH
+$ material-icons-android-importer import-icon [OPTIONS] ICON_PATH
 ```
 
 **Arguments**:
@@ -65,14 +65,14 @@ $ material-icons-android-importer.py import-icon [OPTIONS] ICON_PATH
 * `--project-root DIRECTORY`: Android project root directory  [default: .]
 * `--help`: Show this message and exit.
 
-## `material-icons-android-importer.py download-icon`
+## `material-icons-android-importer download-icon`
 
 Download a material icon as svg.
 
 **Usage**:
 
 ```console
-$ material-icons-android-importer.py download-icon [OPTIONS] ICON_NAME [VARIANT]
+$ material-icons-android-importer download-icon [OPTIONS] ICON_NAME [VARIANT]
 ```
 
 **Arguments**:
@@ -85,14 +85,14 @@ $ material-icons-android-importer.py download-icon [OPTIONS] ICON_NAME [VARIANT]
 * `-o, --output PATH`: Android project root directory
 * `--help`: Show this message and exit.
 
-## `material-icons-android-importer.py list`
+## `material-icons-android-importer list`
 
 Lists all Material Icon ids
 
 **Usage**:
 
 ```console
-$ material-icons-android-importer.py list [OPTIONS] [QUERY]
+$ material-icons-android-importer list [OPTIONS] [QUERY]
 ```
 
 **Arguments**:

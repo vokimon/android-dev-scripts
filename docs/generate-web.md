@@ -1,9 +1,9 @@
-# `generate-web.py`
+# `generate-web`
 
 **Usage**:
 
 ```console
-$ generate-web.py [OPTIONS] COMMAND [ARGS]...
+$ generate-web [OPTIONS] COMMAND [ARGS]...
 ```
 
 **Options**:
@@ -18,14 +18,14 @@ $ generate-web.py [OPTIONS] COMMAND [ARGS]...
 * `build`: Generate the static site
 * `publish`: Publish via rsync over SSH
 
-## `generate-web.py serve`
+## `generate-web serve`
 
 Serve the site locally and rebuild on changes
 
 **Usage**:
 
 ```console
-$ generate-web.py serve [OPTIONS] [DATA_FILE]
+$ generate-web serve [OPTIONS] [DATA_FILE]
 ```
 
 **Arguments**:
@@ -37,14 +37,14 @@ $ generate-web.py serve [OPTIONS] [DATA_FILE]
 * `--port INTEGER`: [default: 8000]
 * `--help`: Show this message and exit.
 
-## `generate-web.py build`
+## `generate-web build`
 
 Generate the static site
 
 **Usage**:
 
 ```console
-$ generate-web.py build [OPTIONS] [DATA_FILE]
+$ generate-web build [OPTIONS] [DATA_FILE]
 ```
 
 **Arguments**:
@@ -55,14 +55,14 @@ $ generate-web.py build [OPTIONS] [DATA_FILE]
 
 * `--help`: Show this message and exit.
 
-## `generate-web.py publish`
+## `generate-web publish`
 
 Publish via rsync over SSH
 
 **Usage**:
 
 ```console
-$ generate-web.py publish [OPTIONS] [DATA_FILE]
+$ generate-web publish [OPTIONS] [DATA_FILE]
 ```
 
 **Arguments**:

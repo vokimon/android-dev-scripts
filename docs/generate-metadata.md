@@ -1,4 +1,4 @@
-# `generate-metadata.py`
+# `generate-metadata`
 
 Generates metadata for packaging and distributing in different platforms
 using standard files as single source of truth.
@@ -76,7 +76,7 @@ Godot outputs:
 **Usage**:
 
 ```console
-$ generate-metadata.py [OPTIONS]
+$ generate-metadata [OPTIONS]
 ```
 
 **Options**:
@@ -84,4 +84,3 @@ $ generate-metadata.py [OPTIONS]
 * `--install-completion`: Install completion for the current shell.
 * `--show-completion`: Show completion for the current shell, to copy it or customize the installation.
 * `--help`: Show this message and exit.
-

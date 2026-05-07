@@ -1,11 +1,11 @@
-# `create-android-project.py`
+# `create-android-project`
 
 Create a minimal Android Kotlin project structure from CLI.
 
 **Usage**:
 
 ```console
-$ create-android-project.py [OPTIONS] [PACKAGE_NAME] [PROJECT_NAME]
+$ create-android-project [OPTIONS] [PACKAGE_NAME] [PROJECT_NAME]
 ```
 
 **Arguments**:
