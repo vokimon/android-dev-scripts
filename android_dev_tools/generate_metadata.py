@@ -307,7 +307,7 @@ def generate_fastlane_icon(metadata_path):
     cp(resource_icon, fastlane_icon)
 
 def motto_from_splash(config):
-    from svg_template import SvgTemplate
+    from .svg_template import SvgTemplate
     if not Path(config.splash_svg).exists():
         return None
     motto = SvgTemplate(config.splash_svg).extract('motto')
@@ -604,7 +604,7 @@ def generate_fastlane_changelogs(metadata_path: Path, translations):
             )
 
 def generate_fastlane_featuredImages(metadata_path: Path, translations):
-    from svg_template import SvgTemplate
+    from .svg_template import SvgTemplate
     if not Path(config.splash_svg).exists():
         warn(f"Not generating splash. Missing {config.splash_svg}")
         return
@@ -692,7 +692,7 @@ def adapt_android_preset(metadata_path):
     dump(presets_file, modified)
 
 def update_promo_images():
-    from svg_template import SvgTemplate
+    from .svg_template import SvgTemplate
     for promo_image in Path(config.splash_svg).parent.glob('*.svg'):
         svg_template = SvgTemplate(promo_image)
         svg_template.generate(
