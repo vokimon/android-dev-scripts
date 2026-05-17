@@ -75,11 +75,11 @@ class RebuildHandler(FileSystemEventHandler):
             typer.echo(f"❌ Build failed: {e}")
 
 def serve_directory(directory: Path, port: int):
-    handler = http.server.SimpleHTTPRequestHandler
+    class HttpServer(http.server.SimpleHTTPRequestHandler):
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, directory=str(directory), **kwargs)
 
-    os.chdir(directory)
-
-    with socketserver.TCPServer(("", port), handler) as httpd:
+    with socketserver.TCPServer(("", port), HttpServer) as httpd:
         typer.echo(f"🌍 Serving at http://localhost:{port}")
         httpd.serve_forever()
 
